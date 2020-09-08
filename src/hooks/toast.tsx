@@ -3,7 +3,7 @@ import { uuid } from 'uuidv4';
 
 import ToastContainer from '../components/ToastContainer';
 
-interface ToastMessage {
+export interface ToastMessage {
   id: string;
   type?: 'success' | 'error' | 'info';
   title: string;
@@ -58,4 +58,4 @@ function useToast(): ToastContextData {
   return context;
 }
 
-export { ToastProvider, useToast, ToastMessage };
+export { ToastProvider, useToast };
