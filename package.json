@@ -7,9 +7,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env jest-environment-jsdom-fourteen --watchAll false",
+    "test:coverage": "react-scripts test --coverage --env jest-environment-jsdom-fourteen --watchAll false",
     "eject": "react-scripts eject",
     "pretty": "prettier --config .prettierrc.json --write \"./src/**/*.{tsx,ts,jsx,js,css,html}\""
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/pages/**/*.tsx",
+      "src/components/**/*.tsx",
+      "src/hooks/*.tsx",
+      "!src/hooks/index.tsx"
+    ]
   },
   "dependencies": {
     "@types/node": "^12.0.0",
@@ -33,13 +42,20 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.2",
+    "@testing-library/react-hooks": "^3.4.1",
+    "@testing-library/user-event": "^12.1.4",
+    "@types/jest": "^26.0.13",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.3",
     "@types/yup": "^0.29.6",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
+    "axios-mock-adapter": "^1.18.2",
     "eslint-plugin-react": "^7.20.6",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "react-test-renderer": "^16.13.1"
   },
   "browserslist": {
     "production": [
